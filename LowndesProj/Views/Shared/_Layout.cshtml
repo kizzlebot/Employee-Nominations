@@ -1,0 +1,76 @@
+﻿@{
+    var name = ViewData["UserName"];
+    var empID = ViewData["empID"];
+    var first = ViewData["nominator_first"];
+    var middle = ViewData["nominator_middle"];
+    var last = ViewData["nominator_last"];
+    var full = ViewData["nominator_full_name"];
+    var winID = ViewData["WindowsID"];
+}
+
+
+<html xmlns:ng="http://angularjs.org">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lowndes Employee Nomination">
+
+    <title>Employee Nominations</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/angular-motion.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-additions.css" rel="stylesheet" />
+    <link href="~/Content/angular-loading-bar.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+
+    @Scripts.Render( "~/bundles/modernizr" )
+    <meta name="description" content="The description of my page" />
+    <script type="text/javascript">
+        window.empid = "@empID";
+        window.full_name = "@name";
+        window.username = "@name";
+        window.VirtualPath = "@HttpRuntime.AppDomainAppVirtualPath";
+    </script>
+</head>
+<body ng-app="nominateApp">
+    <div class="headerwrap" style="margin: 0;padding: 0;background: #E6E6E6;font-family: Verdana, Geneva, sans-serif;line-height: 16px;">
+        <div id="cap" style="display: block;background:  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAbCAIAAAAyOnIjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAE9JREFUeNpcxsEGACEUQNGr///AFvEWEY+IJ6lUxrQas7jOZc5J753WGrVWzIxSCjlnVJWUEjFGRIQQAt57t9Zye+/r91//nXNuY4xHgAEAG9RNV+0PAfsAAAAASUVORK5CYII=) repeat-x;height: 27px;">&nbsp;</div>
+        <div id="header" style="display: block;background: #0D0D0D no-repeat;height: 115px;position: relative;">
+            <div id="headerimg" style="display: block;background: url(~/Content/images/bg_head.png);margin-left: auto;margin-right: auto;position: relative;height: 115px;width: 823px;">
+                <div id="logo"><div></div></div>
+                <div id="sitetitle" style="display: block;font-size: 26px;font-weight: bold;margin-left: 120px;top: 15px;position: relative;color: #eee;text-shadow: 1px 1px 0 #333333;">Employee Recognition Awards</div>
+                <div id="sitedescr" style="display: block;font-size: 16px;font-style: italic;font-family: Georgia, &quot;Times New Roman&quot;, Times, serif;color: #bbb;margin-left: 120px;top: 24px;position: relative;">LDDK&amp;R Award Nominations</div>
+                <div id="nav" style="display: block;position: absolute;left: 400px;top: 83px;width: 415px;height: 30px;"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    @RenderBody()
+
+
+
+    <script type="text/javascript" src="~/Scripts/angular.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular-ui-router.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular-sanitize.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular-animate.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular-loading-bar.js"></script>
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-validator.js"></script>
+    <script type="text/javascript" src="~/Scripts/respond.js"></script>
+
+
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+
+
+</body>
+</html>

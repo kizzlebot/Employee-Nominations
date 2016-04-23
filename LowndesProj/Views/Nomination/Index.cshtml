@@ -1,0 +1,18 @@
+﻿@model LowndesProj.Models.EmployeeData
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var name = ViewData["UserName"];
+    var empID = ViewData["empID"];
+    var first = ViewData["nominator_first"];
+    var middle = ViewData["nominator_middle"];
+    var last = ViewData["nominator_last"];
+    var full = ViewData["nominator_full_name"];
+}
+
+
+<div class="container">
+    <div data-ui-view></div>
+</div>

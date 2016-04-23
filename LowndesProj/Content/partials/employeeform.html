@@ -1,0 +1,56 @@
+﻿<div id="employee_nominate" class="animate-if">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="name">Employee Name (Type in a last or first name)</label>
+
+                <input type="text" ng-model="selected"
+                       typeahead="emp as (emp.first_name + ' ' + ((emp.middle_name) ? emp.middle_name+' ' : '') + emp.last_name)  for emp in employees | filter:{full_name:$viewValue}:strict | limitTo:8"
+                       typeahead-on-select="onSelect($item, $model, $label)"
+                       typeahead-editable="false"
+                       class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" name="position" data-ng-model="selected.job" readonly="" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="department">Department/Team</label>
+                <input type="text" name="department" ng-model="selected.department" readonly="" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="supervisor">Supervisor</label>
+                <input type="text" name="supervisor" ng-model='selected.supervisor_name_last_suffix_first_mi' readonly="" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="reason">Reason for nomination</label>
+                <textarea id="reason" name="reason" rows="4" data-ng-model="reason" ng-trim="true" ng-required="true" class="form-control" required></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="nominated_by">Nominated by</label>
+                <input type="text" name="nominated_by" readonly="" class="form-control" value="{{$root.full_name}}" />
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Submit My Nomination" class="btn btn-info btn-block" ng-click="submit()" />
+</div>

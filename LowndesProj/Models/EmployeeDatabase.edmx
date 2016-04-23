@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EmployeeDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EOM_Nomination">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nomination_Type" Type="bit" Nullable="false" />
+          <Property Name="Nominator_Employee_Number" Type="varchar" MaxLength="20" />
+          <Property Name="Nominator_Employee_Full_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nomination_Reason" Type="varchar(max)" Nullable="false" />
+          <Property Name="Nominee_Employee_Number" Type="varchar" MaxLength="20" />
+          <Property Name="Nominee_Emp_or_Team_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Submission_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UltiPro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employment_status" Type="varchar" MaxLength="30" />
+          <Property Name="employee_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="50" />
+          <Property Name="first_name" Type="varchar" MaxLength="50" />
+          <Property Name="middle_name" Type="varchar" MaxLength="50" />
+          <Property Name="preferred_first_name" Type="varchar" MaxLength="50" />
+          <Property Name="last_hire_date" Type="datetime" />
+          <Property Name="org_level_1" Type="varchar" MaxLength="50" />
+          <Property Name="org_level_2" Type="varchar" MaxLength="50" />
+          <Property Name="org_level_3" Type="varchar" MaxLength="50" />
+          <Property Name="location_code" Type="varchar" MaxLength="50" />
+          <Property Name="gender_code" Type="varchar" MaxLength="50" />
+          <Property Name="job" Type="varchar" MaxLength="50" />
+          <Property Name="supervisor_name_last_suffix_first_mi" Type="varchar" MaxLength="50" />
+          <Property Name="supervisor_employee_number" Type="varchar" MaxLength="10" />
+          <Property Name="eecudfield01" Type="varchar" MaxLength="30" />
+          <Property Name="work_extension" Type="varchar" MaxLength="10" />
+          <Property Name="seniority" Type="datetime" />
+          <Property Name="work_phone" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <Function Name="GetTeamNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="EmployeeDataModelStoreContainer">
+          <EntitySet Name="EOM_Nomination" EntityType="Self.EOM_Nomination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UltiPro" EntityType="Self.UltiPro" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeeDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EOM_Nomination">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nomination_Type" Type="Boolean" Nullable="false" />
+          <Property Name="Nominator_Employee_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nominator_Employee_Full_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nomination_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nominee_Employee_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nominee_Emp_or_Team_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Submission_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UltiPro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employment_status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="employee_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="preferred_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_hire_date" Type="DateTime" Precision="3" />
+          <Property Name="org_level_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="org_level_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="org_level_3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="location_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="supervisor_name_last_suffix_first_mi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="supervisor_employee_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="eecudfield01" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="work_extension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="seniority" Type="DateTime" Precision="3" />
+          <Property Name="work_phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="EmployeeDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EOM_Nomination" EntityType="Self.EOM_Nomination" />
+          <EntitySet Name="UltiPro" EntityType="Self.UltiPro" />
+          <FunctionImport Name="GetTeamNames" ReturnType="Collection(String)" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeDataModelStoreContainer" CdmEntityContainer="EmployeeDataEntities">
+          <EntitySetMapping Name="EOM_Nomination">
+            <EntityTypeMapping TypeName="EmployeeDataModel.EOM_Nomination">
+              <MappingFragment StoreEntitySet="EOM_Nomination">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nomination_Type" ColumnName="Nomination_Type" />
+                <ScalarProperty Name="Nominator_Employee_Number" ColumnName="Nominator_Employee_Number" />
+                <ScalarProperty Name="Nominator_Employee_Full_Name" ColumnName="Nominator_Employee_Full_Name" />
+                <ScalarProperty Name="Nomination_Reason" ColumnName="Nomination_Reason" />
+                <ScalarProperty Name="Nominee_Employee_Number" ColumnName="Nominee_Employee_Number" />
+                <ScalarProperty Name="Nominee_Emp_or_Team_Name" ColumnName="Nominee_Emp_or_Team_Name" />
+                <ScalarProperty Name="Submission_Date" ColumnName="Submission_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UltiPro">
+            <EntityTypeMapping TypeName="EmployeeDataModel.UltiPro">
+              <MappingFragment StoreEntitySet="UltiPro">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="employment_status" ColumnName="employment_status" />
+                <ScalarProperty Name="employee_number" ColumnName="employee_number" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="preferred_first_name" ColumnName="preferred_first_name" />
+                <ScalarProperty Name="last_hire_date" ColumnName="last_hire_date" />
+                <ScalarProperty Name="org_level_1" ColumnName="org_level_1" />
+                <ScalarProperty Name="org_level_2" ColumnName="org_level_2" />
+                <ScalarProperty Name="org_level_3" ColumnName="org_level_3" />
+                <ScalarProperty Name="location_code" ColumnName="location_code" />
+                <ScalarProperty Name="gender_code" ColumnName="gender_code" />
+                <ScalarProperty Name="job" ColumnName="job" />
+                <ScalarProperty Name="supervisor_name_last_suffix_first_mi" ColumnName="supervisor_name_last_suffix_first_mi" />
+                <ScalarProperty Name="supervisor_employee_number" ColumnName="supervisor_employee_number" />
+                <ScalarProperty Name="eecudfield01" ColumnName="eecudfield01" />
+                <ScalarProperty Name="work_extension" ColumnName="work_extension" />
+                <ScalarProperty Name="seniority" ColumnName="seniority" />
+                <ScalarProperty Name="work_phone" ColumnName="work_phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetTeamNames" FunctionName="EmployeeDataModel.Store.GetTeamNames" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

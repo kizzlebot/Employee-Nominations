@@ -1,0 +1,84 @@
+﻿<div class="container">
+    <div class="container">
+        <div class="row centered-form">
+            <div id="formsection" class="col-md-6" ng-class="offset">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{nominationtype}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="form">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="name">Selection</label>
+                                        <select name="award" ng-change="updatePartial(form.formChoice)" ng-model="form.formChoice" class="form-control">
+                                            <option value="1">Applause, Applause</option>
+                                            <option value="2">Teamwork</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- Employee/Team Nominate form injected -->
+                        <div ui-view=""></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Sidebar shown form Employee Nomination -->
+            <div id="sidebar" class="col-md-3" ng-if="form.formChoice == 1">
+                <!-- Guidelines Panel -->
+                <div id="guidelines" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Nomination Criteria</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>Someone who makes a suggestion that has a significant impact on the work group, work processes or the firm as a whole.</li>
+                            <li>Someone who demonstrates extraordinary efforts on behalf of a client or co-worker.</li>
+                            <li>Someone who consistently demonstrates excellent performance in their day to day responsibilities</li>
+                            <li>Someone who assumes additional responsibilities on a temporary basis to assist with projects or to cover for a co-worker's absence.</li>
+                            <li>Someone who makes time to volunteer for firm-related community events.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Disclaimer panel -->
+                <div id="disclaimer" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Disclaimer</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>All nominations are confidential, and only viewed by the Recognition Committee.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar shown for Team Nomination -->
+            <div id="sidebar" class="col-md-3" ng-if="form.formChoice == 2">
+                <!-- Guidelines Panel -->
+                <div id="guidelines" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Nomination Criteria</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>A commitment to work with each other in a spirit of cooperation to achieve results, build positive relationships and deliver special projects and successes.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Disclaimer panel -->
+                <div id="disclaimer" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Disclaimer</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>All nominations are confidential, and only viewed by the Recognition Committee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

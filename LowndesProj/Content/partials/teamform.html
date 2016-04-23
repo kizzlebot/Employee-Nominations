@@ -1,0 +1,37 @@
+﻿<div id="team_nominate" class="animate-if">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="name">Employees or Team</label>
+                <div ng-repeat="sel in inputs" class="input-group">
+                    <input type="text" ng-model="selected[$index]" 
+                           typeahead="emp as emp for emp in all | filter:$viewValue | exclude:selected | limitTo:10"
+                           typeahead-on-select="onSelect($item, $model, $label, $index)"
+                           typeahead-editable="false"
+                           class="form-control"
+                           ng-disabled="(disabled[$index] === true) ? true : false" />
+                    <span id="basic-addon" class="input-group-btn">
+                        <button ng-click="addInput()" class="btn btn-md btn-default">+</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="reason">Reason for nomination</label>
+                <textarea id="reason" rows="4" required="" ng-model="reason" class="form-control" ng-required="true" ng-trim="true" ></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="nominated_by">Nominated by</label>
+                <input type="text" name="nominated_by" readonly="" class="form-control" value="{{$root.full_name}}" />
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Submit My Nomination" ng-click="submit(selected)" class="btn btn-info btn-block" />
+</div>
